@@ -28,11 +28,22 @@ var hardware = ['microphone', 'speaker'];
 
 // set up TJBot's configuration
 var tjConfig = {
+    robot: {
+       gender: config.robot.gender,
+       name: config.robot.name
+    },
+    listen: {
+       language: config.listen.language
+    },
+    speak:{
+       language: config.speak.language
+    },
     log: {
         level: 'verbose'
     }
 };
 
+console.log(TJBot.prototype);
 // instantiate our TJBot!
 var tj = new TJBot(hardware, tjConfig, credentials);
 
@@ -44,13 +55,14 @@ console.log("You can also say, \"" + tj.configuration.robot.name + ", tell me a 
 // the Conversation service
 tj.listen(function(msg) {
     // check to see if they are talking to TJBot
-    if (msg.startsWith(tj.configuration.robot.name)) {
+    if (msg.toLowerCase().startsWith(tj.configuration.robot.name.toLowerCase())) {
         // remove our name from the message
         var turn = msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), "");
 
         // send to the conversation service
         tj.converse(WORKSPACEID, turn, function(response) {
             // speak the result
+            console.log(response);
             tj.speak(response.description);
         });
     }
