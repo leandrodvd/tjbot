@@ -7,6 +7,10 @@ var tj = new TJBot(hardware, configuration, credentials);
 
 
 function wave(){
-  tj.wave();
+  tj.wave()
+tj.wave();
+tj.wave();;
   setTimeout(wave, 5000);
 }
+
+wave();
