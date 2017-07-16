@@ -1,0 +1,19 @@
+{
+  "name": "arm",
+  "version": "0.0.1",
+  "description": "test tjbot arm wave",
+  "main": "arm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tjbot",
+    "ibm",
+    "arm"
+  ],
+  "author": "Leandro Cordeiro David leandrodvd@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "tjbot": "^1.3.0"
+  }
+}
