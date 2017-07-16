@@ -2,8 +2,7 @@ const TJBot = require('tjbot');
 
 var hardware = ['servo'];
 var configuration = {};
-var credentials = {}
-}
+var credentials = {};
 var tj = new TJBot(hardware, configuration, credentials);
 
 
