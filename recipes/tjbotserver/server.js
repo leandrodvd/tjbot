@@ -25,8 +25,10 @@ function initTextStream(socket){
        process.stdout.write(".");
     });
     textStream = stream.pipe(speech_to_text.createRecognizeStream({
-      content_type: 'audio/l16; rate=44100; channels=2',
-      model: 'pt-BR_BroadbandModel',
+      // content_type: 'audio/l16; rate=44100; channels=2',
+      // model: 'pt-BR_BroadbandModel',
+      content_type: 'audio/l16; rate=16000; channels=1',
+      model: 'pt-BR_NarrowbandModel',
       //customization_id: config.STTCustomizationID,
       interim_results: true,
       continuous: true,
