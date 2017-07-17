@@ -48,12 +48,9 @@ function initTextStream(socket){
 
     textStream.on('data', function(str) {
       console.log(' ===== Speech to Text ===== : ' + str); // print the text once received
-
+      socket.emit('message', { text: str});
     });
-    textStream.on('message', function(str) {
-      console.log(' =====(message) Speech to Text ===== : ' + str); // print the text once received
 
-    });
     textStream.on('error', function(err) {
       console.log(' === Watson Speech to Text : An Error has occurred =====') ; // handle errors
       console.log(err) ;

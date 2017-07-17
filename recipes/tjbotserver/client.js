@@ -3,7 +3,11 @@ var ss = require('socket.io-stream');
 var mic = require('mic');
 
 //setup socket
-var socketURL = 'http://localhost:3000';
+var socketURL = 'https://tjbotserver-ldavid.mybluemix.net';
+if(process.argv[2] == '-dev'){
+  socketURL = 'http://localhost:3000';
+}
+
 var socket = io.connect(socketURL, {reconnect: true});
 var stream = ss.createStream();
 ss(socket).emit('audio', stream, {name: "tjbot-client"});
