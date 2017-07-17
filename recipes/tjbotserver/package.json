@@ -1,0 +1,21 @@
+{
+  "name": "tjbotserver",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Leandro Cordeiro David (leandrodvd@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "http": "0.0.0",
+    "mic": "^2.1.1",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3",
+    "socket.io-stream": "^0.9.1",
+    "watson-developer-cloud": "^2.34.0"
+  }
+}
