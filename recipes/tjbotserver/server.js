@@ -22,7 +22,7 @@ function initTextStream(socket){
   ss_socket.on('audio', function(stream, data) {
     console.log(data);
     stream.on('data', function(data) {
-       //console.log("Received Input Stream: " + data.length);
+       process.stdout.write(".");
     });
     textStream = stream.pipe(speech_to_text.createRecognizeStream({
       content_type: 'audio/l16; rate=44100; channels=2',
